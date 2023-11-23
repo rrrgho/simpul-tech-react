@@ -33,6 +33,7 @@ interface IChat {
 interface IMessage {
   id?: number;
   user_id: number | undefined;
+  name?: string;
   group_id: number;
   message: string;
   created_at?: string;

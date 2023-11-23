@@ -43,7 +43,7 @@ const ChatBox = (props: IChatBox) => {
             return (
               <div key={item.id} className="row mt-3">
                 <div className="col-10">
-                  <AccountName>Rian Gho</AccountName>
+                  <AccountName>{item.name}</AccountName>
                   <ChatCard>
                     <ChatText>{item.message}</ChatText> <br />
                     <ChatTextTime>19:50</ChatTextTime>
