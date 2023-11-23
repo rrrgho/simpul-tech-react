@@ -36,6 +36,7 @@ const Auth: FC = () => {
                   type="email"
                   register={register}
                   placeholder="email"
+                  value="riangho@gmail.com"
                 />
                 <FormInput
                   name="password"
@@ -43,6 +44,7 @@ const Auth: FC = () => {
                   register={register}
                   placeholder="password"
                   className="mt-3"
+                  value="admin"
                 />
                 <Input
                   className="mt-3 bg-success text-white"
