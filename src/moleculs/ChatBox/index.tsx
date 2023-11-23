@@ -23,35 +23,36 @@ const ChatBox = (props: IChatBox) => {
   );
   return (
     <Wrapper>
-      {messages.map((item: IMessage) => {
-        if (item.user_id === Identity.user_id) {
-          return (
-            <div key={item.id} className="row justify-content-end mt-3">
-              <div className="col-10">
-                <div className="row text-end">
-                  <AccountName>You</AccountName>
+      {messages &&
+        messages.map((item: IMessage) => {
+          if (item.user_id === Identity.user_id) {
+            return (
+              <div key={item.id} className="row justify-content-end mt-3">
+                <div className="col-10">
+                  <div className="row text-end">
+                    <AccountName>You</AccountName>
+                  </div>
+                  <ChatCard color={Theme.color.chats.purple}>
+                    <ChatText>{item.message}</ChatText> <br />
+                    <ChatTextTime>19:50</ChatTextTime>
+                  </ChatCard>
                 </div>
-                <ChatCard color={Theme.color.chats.purple}>
-                  <ChatText>{item.message}</ChatText> <br />
-                  <ChatTextTime>19:50</ChatTextTime>
-                </ChatCard>
               </div>
-            </div>
-          );
-        } else {
-          return (
-            <div key={item.id} className="row mt-3">
-              <div className="col-10">
-                <AccountName>Rian Gho</AccountName>
-                <ChatCard>
-                  <ChatText>{item.message}</ChatText> <br />
-                  <ChatTextTime>19:50</ChatTextTime>
-                </ChatCard>
+            );
+          } else {
+            return (
+              <div key={item.id} className="row mt-3">
+                <div className="col-10">
+                  <AccountName>Rian Gho</AccountName>
+                  <ChatCard>
+                    <ChatText>{item.message}</ChatText> <br />
+                    <ChatTextTime>19:50</ChatTextTime>
+                  </ChatCard>
+                </div>
               </div>
-            </div>
-          );
-        }
-      })}
+            );
+          }
+        })}
     </Wrapper>
   );
 };
